@@ -10,14 +10,25 @@ import {
   ChevronDown,
   Download,
   Eye,
-  Package,
   Truck,
   Image,
   MessageSquare,
-  ArrowRight,
   Star,
+  CircleDollarSign,
 } from 'lucide-react'
 import './index.css'
+
+/* ──────────────────────────────────────────────
+   Whatsapp Button
+   ────────────────────────────────────────────── */
+function WhatsappButton({ text = "Chat on WhatsApp" }: { text?: string }){
+  return (
+    <a href="https://wa.link/y792wg" target="_blank" rel="noopener noreferrer" className="whatsapp-btn btn-primary">
+      <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1781801144/whatsapp.png"></img>
+      {text}
+    </a>
+  ) 
+}
 
 /* ──────────────────────────────────────────────
    Navbar
@@ -34,8 +45,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-inner">
         <a href="#" className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <Printer size={28} color="#ff00ff" />
-          <span>FUNKY <span className="pink">PRINTS</span></span>
+          <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1768790947/Logo_M_B_wq3jas_acf275.png"></img>
         </a>
 
         <ul className={`nav-links ${open ? 'open' : ''}`}>
@@ -47,10 +57,7 @@ function Navbar() {
         </ul>
 
         <div className="nav-actions">
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn-whatsapp-nav">
-            <MessageCircle size={18} />
-            Chat on WhatsApp
-          </a>
+          <WhatsappButton />
           <button className="nav-hamburger" onClick={() => setOpen(!open)} aria-label="Toggle menu">
             {open ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -68,20 +75,23 @@ function Hero() {
     <section id="hero" className="hero">
       <div className="hero-grid">
         <div className="hero-text">
-          <span className="hero-badge">🔥 Quality Bulk Printing Since 2024</span>
+          <span className="hero-badge">🔥 Quality Bulk Printing Since 2025</span>
           <h1>
-            Premium Bulk Apparel Printing<br />
-            &amp; Custom <span className="pink">DTF Transfers</span>
+            Flawless Custom Printing. Powered by <br />
+            <span className="pink">DTF & Sublimation.</span>
           </h1>
           <p className="hero-sub">
-            High-volume screen printing, DTF heat transfers, and sublimation — all crafted with 
-            vibrant inks and fast turnaround. No minimums that kill your margin.
+            We turn your designs into premium, 
+              retail-ready custom apparel. 
+              
+            Whether you are launching a clothing line, 
+              branding your business, 
+              or outfitting a team, 
+              we deliver high-contrast, 
+              durable prints that get noticed.
           </p>
           <div className="hero-btns">
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              <MessageCircle size={20} />
-              Tap to WhatsApp
-            </a>
+            <WhatsappButton text="Tap to WhatsApp"/>
             <button className="btn-secondary" onClick={() => document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' })}>
               <Eye size={20} />
               Browse Catalogs
@@ -89,11 +99,11 @@ function Hero() {
           </div>
           <div className="hero-stats">
             <div className="stat">
-              <span className="stat-num">500+</span>
+              <span className="stat-num">200+</span>
               <span className="stat-label">Bulk Orders</span>
             </div>
             <div className="stat">
-              <span className="stat-num">99%</span>
+              <span className="stat-num">97%</span>
               <span className="stat-label">Satisfaction</span>
             </div>
             <div className="stat">
@@ -106,20 +116,20 @@ function Hero() {
         <div className="hero-visual">
           <div className="visual-grid">
             <div className="visual-card vc-tall">
-              <Shirt size={42} />
+              <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1781792541/hoodie.png"></img>
               <span>Premium Hoodies</span>
             </div>
             <div className="visual-card vc-square">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ff00ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7 4 9 2 12 2s5 2 6.5 2a2.5 2.5 0 0 1 0 5H18"/><path d="M12 2v20"/><path d="M12 22h6a2 2 0 0 0 2-2V9"/><path d="M12 22H6a2 2 0 0 1-2-2V9"/></svg>
-              <span>Structured Caps</span>
+              <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1781793518/Curved_Peak.png"></img>
+              <span>Caps</span>
             </div>
             <div className="visual-card vc-wide">
-              <Image size={36} />
-              <span>DTF Transfer Sheets</span>
+              <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1781794207/mug_T.png"></img>
+              <span>Mugs</span>
             </div>
             <div className="visual-card vc-small">
               <Star size={28} color="#ff00ff" fill="#ff00ff" />
-              <span>Premium Quality</span>
+              <span>And So Much More...</span>
             </div>
           </div>
         </div>
@@ -141,33 +151,33 @@ function Catalog() {
         <p className="section-sub">Browse our latest collections — updated for 2026</p>
         <div className="catalog-grid">
           <div className="catalog-card">
-            <div className="catalog-icon">
-              <Shirt size={40} />
-            </div>
-            <h3>Bulk Catalogue 2026</h3>
-            <p>T-shirts, hoodies, polos, jackets, caps — full apparel catalog with pricing tiers.</p>
+            <a href="https://drive.google.com/file/d/1WjIvYUObBSzX5ARRTanP6kl0um_ubgWA/preview" target="_blank" rel="noopener noreferrer">
+              <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1775658041/Cover_T.png"></img>
+            </a>
+            <h3>Bulk Catalogue</h3>
+            <p>T-shirts, hoodies, polos, jackets, caps — full bulk catalog for dtf and sublimation.</p>
             <div className="catalog-actions">
-              <a href="/catalogs/bulk-2026.pdf" target="_blank" rel="noopener noreferrer" className="btn-catalog">
+              <a href="https://drive.google.com/file/d/1WjIvYUObBSzX5ARRTanP6kl0um_ubgWA/preview" target="_blank" rel="noopener noreferrer" className="btn-catalog">
                 <Eye size={18} />
                 View Catalog (PDF)
               </a>
-              <a href="/catalogs/bulk-2026.pdf" download className="btn-catalog-dl" title="Download PDF">
+              <a href="https://drive.google.com/uc?export=download&id=1WjIvYUObBSzX5ARRTanP6kl0um_ubgWA" download className="btn-catalog-dl" title="Download PDF">
                 <Download size={18} />
               </a>
             </div>
           </div>
           <div className="catalog-card">
-            <div className="catalog-icon">
-              <Palette size={40} />
-            </div>
-            <h3>Sublimation Catalogue 2026</h3>
+            <a href="https://drive.google.com/file/d/1ShI8WR4w6hBBfBIe89nZWRBShJWhZaw5/preview" target="_blank" rel="noopener noreferrer">
+              <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1770324639/Catalogue_as_book.png"></img>
+            </a>
+            <h3>Sublimation Catalogue</h3>
             <p>All-over print garments, mugs, accessories — vibrant sublimation-ready products.</p>
             <div className="catalog-actions">
-              <a href="/catalogs/sublimation-2026.pdf" target="_blank" rel="noopener noreferrer" className="btn-catalog">
+              <a href="https://drive.google.com/file/d/1ShI8WR4w6hBBfBIe89nZWRBShJWhZaw5/preview" target="_blank" rel="noopener noreferrer" className="btn-catalog">
                 <Eye size={18} />
                 View Catalog (PDF)
               </a>
-              <a href="/catalogs/sublimation-2026.pdf" download className="btn-catalog-dl" title="Download PDF">
+              <a href="https://drive.google.com/uc?export=download&id=1ShI8WR4w6hBBfBIe89nZWRBShJWhZaw5" download className="btn-catalog-dl" title="Download PDF">
                 <Download size={18} />
               </a>
             </div>
@@ -183,20 +193,20 @@ function Catalog() {
    ────────────────────────────────────────────── */
 const services = [
   {
-    icon: <Printer size={44} />,
-    title: 'DTF Transfers',
-    desc: 'Direct-to-film printing for any fabric. Vibrant, wash-resistant, no minimum quantity. Ready to press or we handle application.',
+    icon: <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1781795165/DTF_only.png"></img>,
+    title: 'DTF',
+    desc: 'Direct-to-film printing for any fabric. Vibrant, wash-resistant, no minimum quantity.',
   },
   {
-    icon: <Palette size={44} />,
+    icon: <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1781795165/Sublimation_only.png"></img>,
     title: 'Sublimation',
-    desc: 'Full-colour all-over prints on polyester garments, mugs, bags & accessories. Perfect for sportswear and promotional runs.',
+    desc: 'Full-colour all-over prints on polyester garments, mugs, bags, accessories, etc.',
   },
   {
-    icon: <Shirt size={44} />,
-    title: 'Custom Apparel',
-    desc: 'Screen printing & embroidery on premium blanks. Bulk orders from 50 to 10,000+ units. Your designs, your labels, your brand.',
-  },
+    icon: <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1781796706/logo_sticker.png"></img>,
+    title: 'Vinyl Stickers',
+    desc: 'High-durability, full-colour sticker prints cut exactly to your custom shape.',
+  }
 ]
 
 function Services() {
@@ -228,6 +238,7 @@ const steps = [
   { icon: <MessageSquare size={28} />, title: 'Send Us a Message', desc: 'Reach out on WhatsApp with your idea. We\'ll respond within minutes.' },
   { icon: <Image size={28} />, title: 'Drop Your Artwork', desc: 'Share your design at 300 DPI — AI, PSD, PNG or PDF. We\'ll check readiness.' },
   { icon: <CheckCircle size={28} />, title: 'Approve Your Mockup', desc: 'We prep a digital mockup. Approve, tweak, or request changes — you\'re in control.' },
+  { icon: <CircleDollarSign size={28} />, title: 'Pay Your Invoice', desc: 'Review and approve the information on your invoice and pay. If its bulk only 50% deposit is required.' },
   { icon: <Truck size={28} />, title: 'Fast Courier Delivery', desc: 'Production kicks off immediately. Expect delivery in 3–5 business days.' },
 ]
 
@@ -238,7 +249,7 @@ function HowItWorks() {
         <h2 className="section-title">
           How It <span className="pink">Works</span>
         </h2>
-        <p className="section-sub">From idea to doorstep in four simple steps</p>
+        <p className="section-sub">From idea to doorstep in five simple steps</p>
         <div className="timeline">
           {steps.map((s, i) => (
             <div className="timeline-step" key={i}>
@@ -278,11 +289,7 @@ const faqs = [
   {
     q: 'What\'s the minimum order quantity?',
     a: 'DTF transfers have no minimum — order a single sheet. Screen printing starts at 20 pieces. Sublimation starts at 10 pieces. The more you order, the better the unit price.',
-  },
-  {
-    q: 'Do you ship internationally?',
-    a: 'Yes! We ship worldwide via DHL, FedEx, and Aramex. Domestic delivery within 3–5 business days, international 5–10 business days depending on destination.',
-  },
+  }
 ]
 
 function FAQ() {
@@ -308,15 +315,63 @@ function FAQ() {
             </div>
           ))}
         </div>
-        <div className="faq-cta">
-          <p>Still have questions? We're ready 24/7</p>
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            <MessageCircle size={20} />
-            Chat on WhatsApp
-          </a>
-        </div>
       </div>
     </section>
+  )
+}
+
+/* ──────────────────────────────────────────────
+  Contact Us
+  ────────────────────────────────────────────── */
+const contacts = [
+  {
+    name: 'Whatsapp',
+    icon: 'https://res.cloudinary.com/drtqu6ocj/image/upload/v1781801144/whatsapp.png',
+    link: 'mailto:prints@funkyprintsrsa.co.za'
+  },
+  {
+    name: 'Email',
+    icon: 'https://res.cloudinary.com/drtqu6ocj/image/upload/v1781801013/email_pink.png',
+    link: 'https://wa.link/y792wg'
+  },
+  {
+    name: 'Facebook',
+    icon: 'https://res.cloudinary.com/drtqu6ocj/image/upload/v1781797628/facebook_circle.png',
+    link: 'https://www.facebook.com/share/17GP16nDv7/'
+  },
+  {
+    name: 'Instagram',
+    icon: 'https://res.cloudinary.com/drtqu6ocj/image/upload/v1781797646/instagram_circle.png',
+    link: 'https://www.instagram.com/funkyprintsrsa?igsh=MW5kNWFyZWVsYzR2Nw=='
+  }
+]
+
+function ContactUs() {
+  return (
+    <section id="contactus" className="contact section">
+      <div className="container">
+        <h2 className="section-title">
+          <span className="pink">Contact </span>Us
+        </h2>
+        <p className="section-sub">Still have questions? We're ready 24/7</p>
+        <Socials />
+      </div>
+    </section>
+  )
+}
+
+function Socials({ hideText = false } : { hideText?: boolean }){
+  return (
+    <div className="contact-list">
+      {contacts.map((contact) => (
+        <div key={contact.name} className={`contact-item contact-item-${contact.name.toLowerCase()}`}>
+          <a href={contact.link} target="_blank" rel="noopener noreferrer">
+            <img src={contact.icon} alt={contact.name} />
+            {!hideText && <span>{contact.name}</span>}
+          </a>
+        </div>
+      ))}
+    </div>
   )
 }
 
@@ -328,19 +383,13 @@ function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <Printer size={24} color="#ff00ff" />
-          <span>FUNKY <span className="pink">PRINTS</span></span>
+          <img src="https://res.cloudinary.com/drtqu6ocj/image/upload/v1768790947/Logo_M_B_wq3jas_acf275.png"></img>
         </div>
-        <p className="footer-tagline">Premium bulk apparel printing &amp; custom DTF transfers — delivered fast.</p>
+        <p className="footer-tagline">Premium bulk apparel printing &amp; custom DTF transfers — delivery included.</p>
         <div className="footer-links">
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
-            <MessageCircle size={16} /> WhatsApp
-          </a>
-          <a href="mailto:hello@funkyprints.com">
-            hello@funkyprints.com
-          </a>
+          <Socials hideText />
         </div>
-        <p className="footer-copy">&copy; {new Date().getFullYear()} Funky Prints. All rights reserved.</p>
+        <p className="footer-copy">&copy; {new Date().getFullYear()} Funky Prints RSA. All rights reserved.</p>
       </div>
     </footer>
   )
@@ -359,6 +408,7 @@ function App() {
         <Services />
         <HowItWorks />
         <FAQ />
+        <ContactUs />
       </main>
       <Footer />
     </>
