@@ -1,11 +1,7 @@
 import { useState } from 'react'
 import {
-  MessageCircle,
   Menu,
   X,
-  Palette,
-  Shirt,
-  Printer,
   CheckCircle,
   ChevronDown,
   Download,
