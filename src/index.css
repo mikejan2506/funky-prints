@@ -201,6 +201,12 @@ img {
   box-shadow: var(--pink-glow);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .nav-hamburger {
   display: none;
   padding: 4px;
@@ -797,15 +803,22 @@ img {
     text-align: left;
     font-size: 1rem;
   }
-  .nav-hamburger {
-    display: block;
-  }
-  .btn-whatsapp-nav span {
-    display: none;
-  }
-  .btn-whatsapp-nav {
-    padding: 10px 14px;
-  }
+  .nav-actions {
+      gap: 6px;
+    }
+    .nav-hamburger {
+      display: block;
+    }
+    .whatsapp-btn {
+      padding: 8px 10px !important;
+      min-width: unset !important;
+      gap: 0 !important;
+      font-size: 0 !important;
+    }
+    .whatsapp-btn img {
+      height: 22px;
+      margin: 0;
+    }
 
   .catalog-grid {
     grid-template-columns: 1fr;
