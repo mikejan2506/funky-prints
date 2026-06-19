@@ -1,3 +1,19 @@
+# Funky Prints RSA Landing Page
+
+This is a simple landing page for funky prints rsa to allow people to contact the business using whats app.
+
+It also has the 2 catalogues to view and download and no other information regarding its products for now to keep the site simple.
+
+- Bulk (https://drive.google.com/file/d/1WjIvYUObBSzX5ARRTanP6kl0um_ubgWA/preview)
+- Sublimation (https://drive.google.com/file/d/1ShI8WR4w6hBBfBIe89nZWRBShJWhZaw5/preview)
+
+Finally it has the following socials 
+
+- Facebook (https://www.facebook.com/share/17GP16nDv7/)
+- Instagram (https://www.instagram.com/funkyprintsrsa?igsh=MW5kNWFyZWVsYzR2Nw==)
+- Whatsapp (https://wa.link/y792wg)
+- Email (prints@funkyprintsrsa.co.za)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
